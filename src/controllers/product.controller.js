@@ -16,23 +16,24 @@ const getProductsById = async (req, res) => {
   const { type, message } = await productService.getProductsById(id);
 
   if (type) {
-    return res.status(404).send({
+    return res.status(404).json({
       message: 'Product not found',
     });
   }
   return res.status(200).json(message);
 };
 
-// app.get('/talker/:id', async (req, res) => {
-//   const talkerIds = await readTalker();
-//   const talkerId = talkerIds.find(({ id }) => id === Number(req.params.id));
-//   if (talkerId) {
-//     return res.status(200).json(talkerId);
-//   }
-//     return res.status(404).send({ message: 'Pessoa palestrante não encontrada' });
-// });
+const insertProduct = async (req, res) => {
+  const name = req.body;
+  const { type, message } = await productService.getProductsById(name);
+
+  if (type) return res.status(type).json({ message });
+
+  res.status(201).json(message);
+};
 
 module.exports = {
   getProducts,
   getProductsById,
+  insertProduct,
 };
