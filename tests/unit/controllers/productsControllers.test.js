@@ -18,7 +18,9 @@ describe('Testa a camada controller para a rota "/products"', function () {
       res.status = sinon.stub().returns(res);
       res.json = sinon.stub().returns();
 
-      sinon.stub(productService, 'getProducts').resolves({ type: 200, message: productsMock });
+      sinon
+        .stub(productService, 'getProducts')
+        .resolves({ type: null, message: productsMock });
 
       await productController.getProducts(req, res);
       
