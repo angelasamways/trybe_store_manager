@@ -25,10 +25,7 @@ const getProductsById = async (req, res) => {
 
 const insertProduct = async (req, res) => {
   const { name } = req.body;
-  // const { type, message } = await productService.insertProduct(name);
   const productCreated = await productService.insertProduct(name);
-
-  // if (type) return res.status(type).json({ message });
 
   res.status(201).json(productCreated);
 };
