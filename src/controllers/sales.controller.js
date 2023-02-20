@@ -12,18 +12,14 @@ const getSales = async (_req, res) => {
 };
 
 const getSalesById = async (req, res) => {
-      console.log('Controler');
-
   const { id } = req.params;
-  const { type, message } = await salesService.getSalesById(id);
-        // console.log('Controler');
-
-  if (!type) {
+  const { type, resultado } = await salesService.getSalesById(id);
+  if (type === 404) {
     return res.status(404).json({
       message: 'Sale not found',
     });
   }
-  return res.status(200).json(message);
+  return res.status(200).json(resultado);
 };
 
 // const insertSales = async (req, res) => {

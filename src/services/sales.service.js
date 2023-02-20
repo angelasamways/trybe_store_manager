@@ -7,11 +7,9 @@ const getSales = async () => {
 };
 
 const getSalesById = async (id) => {
-        console.log('Service');
-  console.log(id);
-  const sales = await salesModel.getById(id); 
-  if (!sales) return { type: 404, message: 'Sale not found' };
-  return { type: 200, message: sales };
+  const sales = await salesModel.getById(id);
+  if (sales.length === 0) return { type: 404, resultado: 'Sale not found' };
+  return { type: 200, resultado: sales };
 };
 
 // const insertSales = async (name) => {

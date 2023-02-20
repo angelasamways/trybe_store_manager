@@ -9,11 +9,8 @@ const getAll = async () => {
 };
 
 const getById = async (id) => {
-  const [result] = await connection.execute(
-    'SELECT sal.date, sp.product_id AS productId, sp.quantity FROM StoreManager.sales_products AS sp LEFT JOIN StoreManager.sales AS sal ON sal.id = sp.sale_id WHERE sal.id = (id) ORDER BY sal.id, sp.product_id ASC', [id],
-  );
-  console.log('Model');
-  console.log(result);
+  const query = `SELECT sal.date, sp.product_id AS productId, sp.quantity FROM StoreManager.sales_products AS sp LEFT JOIN StoreManager.sales AS sal ON sal.id = sp.sale_id WHERE sal.id = ${id} ORDER BY sal.id, sp.product_id ASC`;
+  const [result] = await connection.execute(query);
   return result;
 };
 
