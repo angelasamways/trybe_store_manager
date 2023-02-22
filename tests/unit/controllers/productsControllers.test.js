@@ -29,7 +29,7 @@ describe('Testa a camada controller para a rota "/products"', function () {
     });
   });
   describe('2.Testa a camada controller para a função "getProductsById"', function () {
-      it('Quando o produto é encontrado', async function () {
+      it('Faz a busca de um produto pelo id', async function () {
         const req = { params: { id:1 } };
         const res = {};
 

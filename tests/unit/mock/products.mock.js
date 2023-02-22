@@ -14,8 +14,9 @@ const productsMock = [
 ];
 
 const idMocks = [
-{
-  "name": "Martelo de Thor"
+  {
+    "id": 1,
+    "name": "Martelo de Thor"
   }
 ];
 

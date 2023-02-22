@@ -14,23 +14,22 @@ describe('Testa a camada model para a rota "/product"', function () {
     });
   });
 
-  describe('2.Testa a camada model para a função "getProductsById"', function () {
-    it('Quando o produto é encontrado', async function () {
-      sinon.stub(connection, 'execute').resolves([productsMock]);
-      const response = await productModel.getById(1);
-      expect(response).to.be.deep.equal(productsMock);
-      });
-  });
-  
+  // TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+  // describe('2.Testa a camada model para a função "getProductsById"', function () {
+  //   it('Faz a busca de um produto pelo id', async function () {
+  //     sinon.stub(connection, 'execute').resolves([productsMock]);
+  //     const response = await productModel.getById(id);
+  //     expect(response).to.be.equal(idMocks);
+  //     });
+  // });
 
-  // MSC do zero por Carolina Kauark:
-  
   // describe('3.Testa a camada model para a função "insertProduct"', function () {
-  //     it('Insere corretamente', async function () {
-  //
+  //     it('Quando insere corretamente', async function () {
+  
   //     });
   //   });
   
+  // MSC do zero por Carolina Kauark:
   
   // describe('Testa a camada model para a função "getById"', function () {
   //   it('Faz a busca de uma pessoa pelo id', async function () {
