@@ -17,6 +17,7 @@ describe('Testa a camada service para a rota "/products"', function () {
       expect(response).to.be.deep.equal(result);
     });
   });
+
   // describe('2.Testa a camada service para a função "getProductsById"', function () {
   //     it('Quando o produto é encontrado', async function () {
   //       const result = idMocks;
@@ -29,6 +30,9 @@ describe('Testa a camada service para a rota "/products"', function () {
   //       expect(response).to.be.deep.equal(result);
   //     });
   // });
+
+  // MSC do zero por Carolina Kauark:
+  
   // describe('3.Testa a camada service para a função "insertProduct"', function () {
   //     it('Insere corretamente', async function () {
   //       const result = idMocks;

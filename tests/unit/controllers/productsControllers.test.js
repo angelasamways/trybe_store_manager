@@ -28,23 +28,23 @@ describe('Testa a camada controller para a rota "/products"', function () {
       expect(res.json).to.have.been.calledWith(productsMock);
     });
   });
-  // describe('2.Testa a camada controller para a função "getProductsById"', function () {
-  //     it('Quando o produto é encontrado', async function () {
-  //       const req = { params: { id:1 } };
-  //       const res = {};
+  describe('2.Testa a camada controller para a função "getProductsById"', function () {
+      it('Quando o produto é encontrado', async function () {
+        const req = { params: { id:1 } };
+        const res = {};
 
-  //       res.status = sinon.stub().returns(res);
-  //       res.json = sinon.stub().returns();
+        res.status = sinon.stub().returns(res);
+        res.json = sinon.stub().returns();
 
-  //       sinon
-  //         .stub(productService, 'getProductsById')
-  //         .resolves({ idMocks });
+        sinon
+          .stub(productService, 'getProductsById')
+          .resolves({ idMocks });
 
-  //       await productController.getProductsById(req, res);
+        await productController.getProductsById(req, res);
         
-  //       expect(res.status).to.have.been.calledWith(200);
-  //       expect(res.json).to.have.been.calledWith(idMocks);
-  //     });
-  // });
+        expect(res.status).to.have.been.calledWith(200);
+        expect(res.json).to.have.been.calledWith(idMocks);
+      });
+  });
 
 });

@@ -205,13 +205,98 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/sales/200000",
-    "url": "http://localhost:3000/sales/200000",
+    "url": "http://localhost:3000/sales/2",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-20T17:52:42.577Z",
-    "modified": "2023-02-20T17:52:42.577Z",
+    "modified": "2023-02-22T16:05:07.323Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "726ba312-f418-4ee1-a7b7-032f43b0e66c",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-02-20T20:36:56.173Z",
+    "modified": "2023-02-22T16:07:45.782Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Angela\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b217bafd-d223-4197-a6e0-40ab5c83e1c7",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-22T16:05:21.507Z",
+    "modified": "2023-02-22T16:05:21.507Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "02f3977a-e682-4b81-aef1-d4adb72f0cf5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-22T16:05:29.671Z",
+    "modified": "2023-02-22T16:05:29.671Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "482a3269-92f5-4144-9c76-d9f04ec1add5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/5",
+    "url": "http://localhost:3000/products/5",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-02-22T16:06:31.668Z",
+    "modified": "2023-02-22T16:06:31.668Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo de Angela\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "a81fa483-bd50-44a7-8d15-631b2e8a611a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/10",
+    "url": "http://localhost:3000/products/10",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-02-22T16:10:53.091Z",
+    "modified": "2023-02-22T16:10:53.091Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Angela\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
