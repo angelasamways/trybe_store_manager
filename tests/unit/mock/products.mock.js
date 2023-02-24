@@ -22,6 +22,7 @@ const idMocks = [
 
 const id = 1;
 
+
 module.exports = [
   productsMock,
   idMocks,

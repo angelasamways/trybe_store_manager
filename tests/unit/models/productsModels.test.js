@@ -6,6 +6,7 @@ const {productsMock, idMocks, id} = require('../mock/products.mock');
 
 describe('Testa a camada model para a rota "/product"', function () {
   afterEach(function () { sinon.restore() });
+
   describe('1.Testa a camada model para a função "getAll"', function () {
     it('Quando encontra todos os produtos cadastrados', async function () {
       sinon.stub(connection, 'execute').resolves([productsMock]);
@@ -14,50 +15,29 @@ describe('Testa a camada model para a rota "/product"', function () {
     });
   });
 
-  // TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
-  // describe('2.Testa a camada model para a função "getProductsById"', function () {
-  //   it('Faz a busca de um produto pelo id', async function () {
-  //     sinon.stub(connection, 'execute').resolves([productsMock]);
-  //     const response = await productModel.getById(id);
-  //     expect(response).to.be.equal(idMocks);
-  //     });
-  // });
+  // TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator)) RESOLVIDO NO SLACK
+  describe('2.Testa a camada model para a função "getProductsById"', function () {
+    it('Faz a busca de um produto pelo id', async function () {
+      sinon.stub(connection, 'execute').resolves([[productsMock]]);
+      const response = await productModel.getById(id);
+      expect(response).to.be.equal(idMocks);
+      });
+  });
 
-  // describe('3.Testa a camada model para a função "insertProduct"', function () {
-  //     it('Quando insere corretamente', async function () {
-  
-  //     });
-  //   });
-  
-  // MSC do zero por Carolina Kauark:
-  
-  // describe('Testa a camada model para a função "getById"', function () {
-  //   it('Faz a busca de uma pessoa pelo id', async function () {
-  //     sinon.stub(connection, 'execute').resolves([person]);
+  describe('3.Testa a camada model para a função "insertProduct"', function () {
+    it('Quando insere corretamente', async function () {
+   sinon.stub(connection, 'execute').resolves([{ insertId: 4 }]);
+      const response = await productModel.insertProduct('Lanterna');
+      expect(response).to.be.deep.equal({ id: 4, name: 'Lanterna' });
+      });
+  });
 
-  //     const response = await personModel.getById(id);
-  //     expect(response).to.be.equal(person);
-  //   });
-  // });
-
-  
-  // describe('Testa a camada model para a função "insertPerson"', function () {
-  //   it('Faz a inserção de uma nova pessoa', async function () {
-  //     sinon.stub(connection, 'execute').resolves();
-
-  //     const response = await personModel.insertPerson(person);
-  //     expect(response).to.be.equal(undefined);
-  //   });
-  // });
-
-  // describe('Testa a camada model para a função "updateById"', function () {
-  //   it('Faz a atualização de uma nova pessoa pelo id', async function () {
-  //     sinon.stub(connection, 'execute').resolves();
-
-  //     const response = await personModel.updateById(id, person);
-  //     expect(response).to.be.equal(undefined);
-  //   });
-  // });
-
+  describe('4.Testa a camada model para a função "updateProduct"', function () {
+    it('Quando atualiza corretamente', async function () {
+   sinon.stub(connection, 'execute').resolves({ insertId: 3 });
+      const response = await productModel.updateProduct('Lanterna');
+      expect(response).to.be.deep.equal({ insertId: 3 });
+      });
+  });
 
 });
